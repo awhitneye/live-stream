@@ -10,7 +10,7 @@
     "url": "https://github.com/awhitneye/live-stream/issues"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,10 @@
     "stream",
     "chat",
     "rails"
-  ]
+  ],
+  "dependencies": {
+    "css-loader": "^0.28.11",
+    "jest": "^23.1.0",
+    "style-loader": "^0.21.0"
+  }
 }
