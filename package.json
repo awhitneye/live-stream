@@ -1,0 +1,24 @@
+{
+  "name": "live-stream",
+  "version": "1.0.0",
+  "description": "Login your Google account and join a live-stream!  Filter chat messages by username!",
+  "main": "index.js",
+  "author": "awhitneye",
+  "license": "ISC",
+  "homepage": "https://github.com/awhitneye/live-stream#readme",
+  "bugs": {
+    "url": "https://github.com/awhitneye/live-stream/issues"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/awhitneye/live-stream.git"
+  },
+  "keywords": [
+    "stream",
+    "chat",
+    "rails"
+  ]
+}
