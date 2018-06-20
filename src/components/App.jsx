@@ -4,7 +4,7 @@ import url from 'url';
 import axios from 'axios';
 import style from './components/styles/app.css';
 import ChatList from './components/ChatList';
-import dummy from '../db/Sues-fake-data';
+// import dummy from 'somewhere'  <-- exampleStreamData
 
 class App extends React.Component {
   constructor(props) {
@@ -18,15 +18,33 @@ class App extends React.Component {
 
   componentWillMount() {
     //ajax requests during willMount
-  }
-  
-  changeVideo(selectedVideo) {
-    // takes a selected video object and will change the "currentStream"
-    this.setState({currentStream: selectedVideo});
+    const thisUrl = document.location;
+    const path = thisUrl.pathname;
+    // console.log('Path', path); // should result in /biz/SOME_ID
+    const reqId = path.split('/')[2]; 
+    // console.log('reqId, ', reqId);// should result in the ID
+    this.state.currentBiz = reqId;
+    axios.get(`http://127.0.0.1:8081/watch/${reqId}/`)
+      .then((res) => {
+        console.log('res.data looks like: ', res.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
-  changeVideoSet(data) {
-    this.setState({streamList: data, currentStream: data[0]});
+  changeStream(selectedStream) {
+    // takes a selected Stream object and will change the "currentStream"
+    this.setState({
+      currentStream: selectedStream
+    });
+  }
+
+  changeStreamList(data) {
+    this.setState({
+      // streamList: data, 
+      currentStream: data[0],
+    });
   }
 
   autoPlayChange() {
