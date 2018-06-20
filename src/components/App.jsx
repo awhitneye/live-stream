@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import url from 'url';
 import axios from 'axios';
 import style from './components/styles/app.css';
-import ChatList from './components/ChatList';
+// import ChatList from './components/ChatList';
 // import dummy from 'somewhere'  <-- exampleStreamData
 
 class App extends React.Component {
@@ -17,20 +17,25 @@ class App extends React.Component {
   }
 
   componentWillMount() {
-    //ajax requests during willMount
+    // ajax requests during willMount
     const thisUrl = document.location;
     const path = thisUrl.pathname;
     // console.log('Path', path); // should result in /biz/SOME_ID
     const reqId = path.split('/')[2]; 
     // console.log('reqId, ', reqId);// should result in the ID
-    this.state.currentBiz = reqId;
-    axios.get(`http://127.0.0.1:8081/watch/${reqId}/`)
-      .then((res) => {
-        console.log('res.data looks like: ', res.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    this.setState({
+      currentStream: reqId, 
+    });
+
+    //logic below goes in each component to router
+    // axios.get(`http://127.0.0.1:8081/stream/${reqId}/`)
+    //   .then((res) => {
+    //     console.log('res.data looks like: ', res.data);
+    //     // this.setState({ currentStream: something from data})
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
   }
 
   changeStream(selectedStream) {
