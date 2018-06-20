@@ -10,6 +10,9 @@
     "url": "https://github.com/awhitneye/live-stream/issues"
   },
   "scripts": {
+    "webpack": "webpack",
+    "build": "webpack -d",
+    "build:watch": "webpack -d --watch",
     "test": "jest --coverage"
   },
   "repository": {
