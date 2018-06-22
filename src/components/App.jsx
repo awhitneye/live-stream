@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import url from 'url';
 import axios from 'axios';
-import style from './components/styles/app.css';
+import style from '../styles/app.css';
 // import ChatList from './components/ChatList';
 // import dummy from 'somewhere'  <-- exampleStreamData
 
@@ -13,7 +13,7 @@ class App extends React.Component {
       // streamList: [],
       currentStream: {},
       autoplay: 1,
-    };
+    }; 
   }
 
   componentWillMount() {
